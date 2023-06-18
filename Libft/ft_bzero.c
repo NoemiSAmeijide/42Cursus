@@ -6,11 +6,10 @@
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:39:46 by nosilves          #+#    #+#             */
-/*   Updated: 2023/05/26 13:32:11 by nosilves         ###   ########.fr       */
+/*   Updated: 2023/06/07 22:54:22 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*The bzero() function writes n zeroes bytes to the start of the string s.  
- 	If n is zero, bzero() does nothing.*/
+/*bzero() escriu n \0 al comencament de lstring. si lstring es 0 no torna res*/
 
 #include "libft.h"
 

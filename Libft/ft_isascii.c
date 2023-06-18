@@ -6,11 +6,10 @@
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 02:29:44 by nosilves          #+#    #+#             */
-/*   Updated: 2023/05/25 14:43:02 by nosilves         ###   ########.fr       */
+/*   Updated: 2023/06/07 23:01:27 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*The isascii() function tests for an ASCII character, which is any
-     character between 0 and decimal 127 inclusive.*/
+/*isascii() comprova que sigui un num dins la taula ascii*/
 
 #include "libft.h"
 

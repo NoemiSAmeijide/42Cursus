@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 02:21:43 by nosilves          #+#    #+#             */
-/*   Updated: 2023/06/07 23:02:02 by nosilves         ###   ########.fr       */
+/*   Created: 2023/06/05 21:28:21 by nosilves          #+#    #+#             */
+/*   Updated: 2023/06/07 22:57:49 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* isdigit() function testeja si es digit
-	Returns 0 = false.non-0 = true*/
+/*calloc() guarda espai suficient per a 'count' i els omple de '\0'
+ * retorna el * a la memoria nova, si hi ha un error = NULL
+ */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-/*
-#include <unistd.h>
-int	main(int argc, char **argv)
-{
-	int	a;
+	void	*ptr;
 
-	if (argc != 2)
-		write (1, "error", 5);
-	else
-	{
-		a = ft_isdigit(argv[1][0]);
-		if (a == 0)
-		{
-			write (1, "no", 2);
-		}
-		else
-		{
-			write (1, "si", 2);
-		}
-	}
-}*/
+	ptr = malloc(size * count);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, size * count);
+	return (ptr);
+}

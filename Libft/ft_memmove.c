@@ -6,12 +6,10 @@
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:48:21 by nosilves          #+#    #+#             */
-/*   Updated: 2023/05/26 13:34:55 by nosilves         ###   ########.fr       */
+/*   Updated: 2023/06/09 17:25:10 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*The memmove() function copies len bytes from string src to string
-     dst.  The two strings may overlap; the copy is always done in a
-     non-destructive manner.*/
+/*memmove() fa el mateix que memcpy pero si que mira loverlap.*/
 
 #include "libft.h"
 
@@ -26,7 +24,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	strdst = (unsigned char *)dst;
 	if (strsrc == strdst)
 		return (dst);
-	if (strsrc < strdst)
+	if (strsrc > strdst)
 	{
 		while (i < len)
 		{
@@ -34,7 +32,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			i++;
 		}
 	}
-	else if (strsrc > strdst)
+	else if (strsrc < strdst)
 	{
 		while (len--)
 			strdst[len] = strsrc[len];
@@ -42,15 +40,23 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	return (dst);
 }
 /*
+#include <string.h>
 #include <stdio.h>
 int	main(void)
 {
-	char dst[20];
-	const void *src;
-	char str[20] = "Hello World!";
+	char	src[] = "lorem ipsum dolor sit amet";
+	char	*dst;
 
-//	dst[0] = '\0';
-	src = str;
-	printf("Desti: %s\n", ft_memmove(dst, src, 23));
-	printf("Original: %s\n", src);
-}*/
+	dst = src + 1;
+
+	char	src2[] = "lorem ipsum dolor sit amet";
+	char	*dst2;
+
+	dst2 = src2 + 1;
+
+	printf("FT Desti: %s\n", ft_memmove(dst, src, 20));
+	printf("FT Original: %s\n", src);
+
+	printf("Desti: %s\n", memmove(dst2, src2, 20));
+	printf("Original: %s\n", src2);
+	}*/

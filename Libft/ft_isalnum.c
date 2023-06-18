@@ -6,11 +6,11 @@
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 02:25:52 by nosilves          #+#    #+#             */
-/*   Updated: 2023/05/25 14:42:44 by nosilves         ###   ########.fr       */
+/*   Updated: 2023/06/07 22:59:41 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* The isalnum() function tests for any character for which isalpha(3)
-     or isdigit(3) is true. returns 0 if it is false and non-0 if it is true.*/
+/* isalnum() mira si el caracter es alfanumeric  
+ * retorna 0 si no ho es, i no0 si es cert*/
 
 #include "libft.h"
 

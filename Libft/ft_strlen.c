@@ -6,18 +6,16 @@
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 02:39:56 by nosilves          #+#    #+#             */
-/*   Updated: 2023/05/26 13:30:12 by nosilves         ###   ########.fr       */
+/*   Updated: 2023/06/09 20:27:22 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*The strlen() function computes the length of the string s. 
-	The strlen() function returns the number of characters that 
-	precede the terminating NUL character.*/
+/*strlen() conta quants caracters hi ha a *s */
 
 #include "libft.h"
 
-int	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
 	while (*s != '\0')

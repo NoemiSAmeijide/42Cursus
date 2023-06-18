@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 22:39:42 by nosilves          #+#    #+#             */
-/*   Updated: 2023/06/07 23:00:47 by nosilves         ###   ########.fr       */
+/*   Created: 2023/06/09 00:11:59 by nosilves          #+#    #+#             */
+/*   Updated: 2023/06/09 00:50:51 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*isalpha() testeja si es un caracter alfabetic (mayus i min)
- * Retorna  0 = false. non-0 = true*/
+/*Elimina y libera el nodo ’lst’ dado y todos los consecutivos de ese nodo, 
+ * utilizando la función ’del’ y free(3).
+	Al final, el puntero a la lista debe ser NULL.*/
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
-}
-/*
-#include <unistd.h>
-int	main(int argc, char **argv)
-{
-	int	a;
+	t_list	*res;
 
-	if (argc != 2)
-		write (1, "error", 5);
-	else
+	res = *lst;
+	if (res != NULL)
 	{
-		a = ft_isalpha(argv[1][0]);
-		if (a == 0)
-		{
-			write (1, "no", 2);
-		}
-		else
-		{
-			write (1, "si", 2);
-		}
+		if (res->next != NULL)
+			ft_lstclear(&res->next, del);
+		del((void *)res->content);
+		free(res);
+		*lst = NULL;
 	}
-}*/
+}

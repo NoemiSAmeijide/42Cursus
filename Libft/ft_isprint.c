@@ -6,11 +6,11 @@
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 02:34:49 by nosilves          #+#    #+#             */
-/*   Updated: 2023/05/25 14:43:18 by nosilves         ###   ########.fr       */
+/*   Updated: 2023/06/07 23:02:58 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*  The isprint() function tests for any printing character, including
-     space (` '). Returns 0 = false. Returns non-0 = true.*/
+/*  isprint() testeja si es pot imprimir, incloent espais.
+ *  Returns 0 = false. non-0 = true.*/
 
 #include "libft.h"
 

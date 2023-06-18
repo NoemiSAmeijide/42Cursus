@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 22:39:42 by nosilves          #+#    #+#             */
-/*   Updated: 2023/06/07 23:00:47 by nosilves         ###   ########.fr       */
+/*   Created: 2023/06/02 19:22:00 by nosilves          #+#    #+#             */
+/*   Updated: 2023/06/09 20:40:39 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*isalpha() testeja si es un caracter alfabetic (mayus i min)
- * Retorna  0 = false. non-0 = true*/
+/*strrchr() busca lultim c en *s
+ * retorna el seu *  */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	char	*res;
+
+	res = 0;
+	while (*s != '\0')
+	{
+		if (*s == (char)c)
+			res = (char *)s;
+		s++;
+	}
+	if (*s == (char)c)
+		return ((char *)s);
+	return (res);
 }
 /*
-#include <unistd.h>
-int	main(int argc, char **argv)
+#include <stdio.h>
+int	main(void)
 {
-	int	a;
+	const char	*s;
+	int	c;
 
-	if (argc != 2)
-		write (1, "error", 5);
-	else
-	{
-		a = ft_isalpha(argv[1][0]);
-		if (a == 0)
-		{
-			write (1, "no", 2);
-		}
-		else
-		{
-			write (1, "si", 2);
-		}
-	}
+	c = 77;
+	s = "NOEMI";
+	printf("%s", ft_strchr(s, c));
 }*/

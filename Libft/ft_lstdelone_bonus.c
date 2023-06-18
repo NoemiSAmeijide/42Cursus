@@ -1,43 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 02:21:43 by nosilves          #+#    #+#             */
-/*   Updated: 2023/06/07 23:02:02 by nosilves         ###   ########.fr       */
+/*   Created: 2023/06/08 23:51:25 by nosilves          #+#    #+#             */
+/*   Updated: 2023/06/09 00:58:21 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* isdigit() function testeja si es digit
-	Returns 0 = false.non-0 = true*/
+/*Toma como parámetro un nodo ’lst’ y libera la memoria del contenido 
+ * utilizando la función ’del’ dada como parámetro, además de liberar el nodo. 
+ * La memoria de ’next’ no debe liberarse.*/
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	del(lst->content);
+	free(lst);
 }
-/*
-#include <unistd.h>
-int	main(int argc, char **argv)
-{
-	int	a;
-
-	if (argc != 2)
-		write (1, "error", 5);
-	else
-	{
-		a = ft_isdigit(argv[1][0]);
-		if (a == 0)
-		{
-			write (1, "no", 2);
-		}
-		else
-		{
-			write (1, "si", 2);
-		}
-	}
-}*/

@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 02:21:43 by nosilves          #+#    #+#             */
-/*   Updated: 2023/06/07 23:02:02 by nosilves         ###   ########.fr       */
+/*   Created: 2023/06/08 23:14:07 by nosilves          #+#    #+#             */
+/*   Updated: 2023/06/08 23:51:34 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* isdigit() function testeja si es digit
-	Returns 0 = false.non-0 = true*/
+/*Devuelve el último nodo de la lista.*/
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-/*
-#include <unistd.h>
-int	main(int argc, char **argv)
-{
-	int	a;
+	t_list	*res;
 
-	if (argc != 2)
-		write (1, "error", 5);
-	else
-	{
-		a = ft_isdigit(argv[1][0]);
-		if (a == 0)
-		{
-			write (1, "no", 2);
-		}
-		else
-		{
-			write (1, "si", 2);
-		}
-	}
-}*/
+	res = lst;
+	if (lst == NULL)
+		return (NULL);
+	while (res->next != NULL)
+		res = res->next;
+	return (res);
+}

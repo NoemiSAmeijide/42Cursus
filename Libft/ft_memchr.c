@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 02:54:08 by nosilves          #+#    #+#             */
-/*   Updated: 2023/06/09 17:26:25 by nosilves         ###   ########.fr       */
+/*   Created: 2023/06/02 20:07:48 by nosilves          #+#    #+#             */
+/*   Updated: 2023/06/09 17:13:48 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*memset() escriu len bytes de c (convertida en char) al string b*/
+/*memchr() localitza la primera c dins el string s 
+ *retorn un * sl byte localitzat o NULL si no hi es */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*ptr;
 
+	ptr = (unsigned char *)s;
 	i = 0;
-	while (len--)
+	while (i < n)
 	{
-		((unsigned char *)b)[i] = c;
+		if (i < n && ptr[i] == (unsigned char)c)
+			return ((void *)&ptr[i]);
 		i++;
 	}
-	return (b);
+	return (NULL);
 }
+
 /*
+#include <string.h>
 #include <stdio.h>
 int	main(void)
 {
-	char str[20] = "Hello World!";
+	const char	*s;
+	int	c;
 
-	printf("Abans: %s\n", str);
-	ft_memset(str, '*', 5);
-	printf("Abans: %s\n", str);
+	c = 77;
+	s = "NOEMI";
+	printf("%s", ft_memchr(s, c, 15));
 }*/

@@ -6,11 +6,12 @@
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 04:55:01 by nosilves          #+#    #+#             */
-/*   Updated: 2023/05/26 13:34:35 by nosilves         ###   ########.fr       */
+/*   Updated: 2023/06/09 17:38:40 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*strlcat() appends string src to the end of dst.  It will append at
-     most dstsize - strlen(dst) - 1 + \0.*/
+/*strlcat() junta un string src al final de dst.
+ * enganxa com a molt dstsize - strlen(dst) -1 + '\0'
+ **/
 
 #include "libft.h"
 

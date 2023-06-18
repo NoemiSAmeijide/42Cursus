@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 22:39:42 by nosilves          #+#    #+#             */
-/*   Updated: 2023/06/07 23:00:47 by nosilves         ###   ########.fr       */
+/*   Created: 2023/06/08 18:52:08 by nosilves          #+#    #+#             */
+/*   Updated: 2023/06/08 19:06:43 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*isalpha() testeja si es un caracter alfabetic (mayus i min)
- * Retorna  0 = false. non-0 = true*/
+/*Añade el nodo ’new’ al principio de la lista ’lst’.*/
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	new->next = *lst;
+	*lst = new;
 }
 /*
-#include <unistd.h>
-int	main(int argc, char **argv)
+#include <stdio.h>
+int	main(void)
 {
-	int	a;
-
-	if (argc != 2)
-		write (1, "error", 5);
-	else
-	{
-		a = ft_isalpha(argv[1][0]);
-		if (a == 0)
-		{
-			write (1, "no", 2);
-		}
-		else
-		{
-			write (1, "si", 2);
-		}
-	}
+	char	cosa[] = "hola bon dia!!";
+	printf ("%s", ft_lstadd_front(cosa)->content);
 }*/

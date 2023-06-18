@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 02:21:43 by nosilves          #+#    #+#             */
-/*   Updated: 2023/06/07 23:02:02 by nosilves         ###   ########.fr       */
+/*   Created: 2023/06/07 12:56:34 by nosilves          #+#    #+#             */
+/*   Updated: 2023/06/07 13:06:31 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* isdigit() function testeja si es digit
-	Returns 0 = false.non-0 = true*/
+/*A cada carácter de la string ’s’, aplica la función ’f’ dando como parámetros
+ * el índice de cada carácter dentro de ’s’ y la dirección del propio carácter,
+ * que podrá modificarse si es necesario.*/
 
-#include "libft.h"
-
-int	ft_isdigit(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-/*
-#include <unistd.h>
-int	main(int argc, char **argv)
-{
-	int	a;
+	int	i;
 
-	if (argc != 2)
-		write (1, "error", 5);
-	else
+	i = 0;
+	while (s[i] != '\0')
 	{
-		a = ft_isdigit(argv[1][0]);
-		if (a == 0)
-		{
-			write (1, "no", 2);
-		}
-		else
-		{
-			write (1, "si", 2);
-		}
+		f(i, (s + i));
+		i++;
 	}
-}*/
+}

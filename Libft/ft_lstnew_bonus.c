@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nosilves <nosilves@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 02:54:08 by nosilves          #+#    #+#             */
-/*   Updated: 2023/06/09 17:26:25 by nosilves         ###   ########.fr       */
+/*   Created: 2023/06/08 17:45:46 by nosilves          #+#    #+#             */
+/*   Updated: 2023/06/08 18:47:40 by nosilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*memset() escriu len bytes de c (convertida en char) al string b*/
+/*Crea un nuevo nodo utilizando malloc(3). La variable miembro ’content’ 
+ * se inicializa con el contenido del parámetro ’content’. La variable ’next’,
+ * con NULL.*/
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*nodo;
 
-	i = 0;
-	while (len--)
-	{
-		((unsigned char *)b)[i] = c;
-		i++;
-	}
-	return (b);
+	nodo = malloc(sizeof(t_list));
+	if (!nodo)
+		return (NULL);
+	nodo->content = content;
+	nodo->next = NULL;
+	return (nodo);
 }
 /*
 #include <stdio.h>
 int	main(void)
 {
-	char str[20] = "Hello World!";
-
-	printf("Abans: %s\n", str);
-	ft_memset(str, '*', 5);
-	printf("Abans: %s\n", str);
+	char	cosa[] = "hola bon dia!!";
+	printf ("%s", ft_lstnew(cosa)->content);
 }*/
